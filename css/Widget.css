@@ -1,0 +1,79 @@
+
+	
+.bodynight {
+  position: relative;
+  background-color: #011111;
+  background-image: radial-gradient(#0d292a 10%, #011111 80%);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+
+
+h2 {
+  text-align: center;
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  font-size: 40px;
+  margin-top: 0px;
+}
+
+
+h4 {
+  text-align: center;
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+h3 {
+  text-align: center;
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  font-size: 14px;
+  margin-top: 0px;
+}
+
+
+/**************** CLOCK ****************/
+
+.linebackgroundnight {
+  text-align: center;
+  height: 0px;
+  width: 100%;
+  margin: auto;
+  margin-top: 120px;
+  
+  font-size: 50px;
+  background-color: black;
+ /* background-color: rgba(0,50,100,.15);
+ padding: 70px;*/
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0,0,0,3);
+}
+
+
+#time {
+	text-align: center;
+ margin: auto;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+
+/*we need to style the popup with CSS so it is placed as a popup does*/
+#popup,#popup1,#popup2 {
+    display:none;
+    position:absolute;
+	height: 500px;
+	width: 600px;
+    margin:0 auto;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 50px 2px #000;
+}
+
+
+.credit { position:fixed; bottom:10px;right:10px; color:#aaa; font-size:13px;font-family:arial,sans-serif; }

@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>
+        Creating Dashboard
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway:700,500,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Squada+One' rel='stylesheet' type='text/css' />
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type='text/css' />
+    <link rel="stylesheet" type="text/css" href="../css/Widget.css" />
+    <link rel="stylesheet" type="text/css" href="../css/calender.css" />
+    <link rel="stylesheet" type="text/css" href="../css/clock.css" />
+
+    <link rel="stylesheet" href="../css/weather-icons.css">
+    <link rel="stylesheet" href="../css/weather-icons-wind.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <Script src="../js/calender.js" language="javascript" type="text/javascript"></Script>
+    <Script src="../js/clock.js" language="javascript" type="text/javascript"></Script>
+    <Script src="../js/clock1.js" language="javascript" type="text/javascript"></Script>
+    <Script src="../js/weather.js" language="javascript" type="text/javascript"></Script>
+</head>
+
+<body class="bodynight" onload="callAjax();">
+    <h2>Dashboard with Widgets</h2>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <a href="#" id="show">
+
+            <div class="col-sm-4" style="background-color:black;">
+                <div class="container " style="background-color:black; height: 340px; width: 430px;">
+                    <h2>Digital Clock</h2>
+                    <div class="linebackgroundnight">
+                        <div id="time" style="background-color:black;"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" id="weather">
+            <div class="col-sm-4" style="background-color:black;">
+                <div class="container " style="background-color:black; height: 340px; width: 430px;">
+                    <h2>Weather</h2>
+                    <h2 id="main" style=" margin-top: 130px;"><b style="font-size: 14px;  font-family: 'Orbitron', sans-serif;">Loading...</b></h2>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" id="calender">
+            <div class="col-sm-4" style="background-color:black;">
+                <div class="container " style="background-color:black; height: 340px; width: 430px;">
+                    <h2>Calender</h2>
+                    <div class="linebackgroundnight" style="background-color:black;">
+                        <span id="day"  style="font-size: 40px; font-family: 'Orbitron', sans-serif;"></span>
+                        <span id="month" style=" font-size: 30px; font-family: 'Orbitron', sans-serif;"></span>
+
+                    </div>
+                </div>
+            </div>
+        </a>
+        <h4 style="margin-top: 400px; color: white; align: center; font-size: 15px;"><b>Click the Widgets to view<b></h4>
+    </div>
+
+    <div id="popup" class="popup panel panel-primary" style="height: 550px; margin-top: -20px; background-color:  #011111;">
+
+        <h2 style="color:white;">Analog Clock</h2>
+        <div class="container" style="background-color:  #011111;  margin-left: 0px;  ">
+            <div id="clock">
+                <ul>
+                    <li class="hour hr1"><span>1</span>
+                    </li>
+                    <li class="hour hr2"><span>2</span>
+                    </li>
+                    <li class="hour hr3"><span>3</span>
+                    </li>
+                    <li class="hour hr4"><span>4</span>
+                    </li>
+                    <li class="hour hr5"><span>5</span>
+                    </li>
+                    <li class="hour hr6"><span>6</span>
+                    </li>
+                    <li class="hour hr7"><span>7</span>
+                    </li>
+                    <li class="hour hr8"><span>8</span>
+                    </li>
+                    <li class="hour hr9"><span>9</span>
+                    </li>
+                    <li class="hour hr10"><span>10</span>
+                    </li>
+                    <li class="hour hr11"><span>11</span>
+                    </li>
+                    <li class="hour hr12"><span>12</span>
+                    </li>
+                </ul>
+
+                <div id="hour"></div>
+                <div id="minute"></div>
+                <div id="second"></div>
+
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button id="close" class="btn btn-lg btn-primary">Close</button>
+        </div>
+
+
+    </div>
+
+    <div id="popup1" class="popup1 panel panel-primary" style="height: 550px;  margin-top: -20px; background-color:  #011111;">
+        <h2 style="color:white;">Calender 2015</h2>
+        <div class="container">
+            <a class="back"><i class="glyphicon glyphicon-chevron-left"></i></a>
+            <h2 id="curr-month" style="width: 430px; display: inline-block;">Month Space</h2>
+            <a class="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+            <div id="all-days">
+                <ul id="days">
+                </ul>
+            </div>
+            <div>
+                <ul id="all-date">
+                </ul>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <button id="closeC" class="btn btn-lg btn-primary">Close</button>
+        </div>
+    </div>
+
+    <div id="popup2" class="popup2 panel panel-primary" style="height: 550px; margin-top: -45px; background-color:  #011111;">
+
+        <h2 style="color: white;">Weather</h2>
+        <br>
+        <br>
+
+        <table>
+            <tr>
+                <td>
+                    <div class="icon-box">
+                        <div class="wi wi-day-cloudy" style="font-size: 140px; color: white; margin-left: 50px;"></div>
+                    </div>
+                </td>
+                <td>
+                    <h4 id="name" style="color: white; text-align: right;  margin-left: 140px; "><strong>Loading...</strong>: </h4>
+                    <br>
+                    <h4 id="WeatherPanelField" style="font-size: 50px;text-align: right;  margin-left: 140px;"><b style="font-size: 14px;">Loading...</b> </h4>
+                    <br>
+                    <h4 id="desc" style="text-align: right; margin-left: 140px; "><b style="font-size: 14px; ">Loading...</b> </h4>
+                    <br>
+                </td>
+            </tr>
+        </table>
+        <h3 id="Tmax" style="text-align: right; margin-right: 80px;"><b style="font-size: 14px;">Loading...</b>: </h3>
+        <h3 id="HumidityField" style="text-align: right; margin-right: 80px;"><b style="font-size: 14px;">Loading...</b>: </h3>
+
+        <br>
+        <br>
+        <table>
+            <tr>
+                <td>
+                    <h4 id="day1" style="align: center; margin-left: 50px;"><b style="font-size: 16px;">Tomorrow</b> </h4>
+                    <div class="icon-box">
+                        <div class="wi wi-night-clear" style=" align: center; font-size: 30px; color: white;  margin-left: 70px;"></div>
+                    </div>
+                    <h4 id="day1T" style="align: center; margin-left: 50px;"><b style="font-size: 14px;">Loading...</b> </h4>
+                    <h4 id="day1D" style="align: center; margin-left: 50px;"><b style="font-size: 14px;">Loading...</b> </h4>
+
+                </td>
+                <td>
+                    <h4 id="day2" style="align: center; margin-left: 50px;"><b style="font-size: 16px;">Tomorrow</b> </h4>
+                    <div class="icon-box">
+                        <div class="wi wi-wu-sunny" style=" align: center; font-size: 30px; color: white;  margin-left: 70px;"></div>
+                    </div>
+                    <h4 id="day2T" style="align: center; margin-left: 50px;"><b style="font-size: 14px;">Loading...</h4>
+                    <h4 id="day2D" style="align: center; margin-left: 50px;"><b style="font-size: 14px;">Loading...</b> </h4>
+
+                </td>
+                <td>
+                    <h4 id="day3" style="align: center; margin-left: 50px;"><b style="font-size: 16px;">Tomorrow</b> </h4>
+                    <div class="icon-box">
+                        <div class="wi wi-day-cloudy" style=" align: center; font-size: 30px; color: white; margin-left: 89px;"></div>
+                    </div>
+                    <h4 id="day3T" style="align: center; margin-left: 50px;"><b style="font-size: 14px;">Loading...</h4>
+                    <h4 id="day3D" style="align: center; margin-left: 50px;"><b style="font-size: 14px;">Loading...</b> </h4>
+
+                </td>
+                <td>
+                    <h4 id="day4" style="align: center;margin-left: 50px;"><b style="font-size: 16px;">Tomorrow</b> </h4>
+                    <div class="icon-box">
+                        <div class="wi wi-fog" style="align: center; font-size: 30px; color: white; margin-left: 85px;"></div>
+                    </div>
+                    <h4 id="day4T" style="align: center; margin-left: 50px;"><b style="font-size: 14px;">Loading...</h4>
+                    <h4 id="day4D" style="align: center; margin-left: 50px;"><b style="font-size: 14px;">Loading...</b> </h4>
+                    <script src="../js/weekweather.js"></script>
+                </td>
+                <tr>
+
+        </table>
+        <br>
+
+        <div class="panel-footer">
+            <button id="closeW" class="btn btn-lg btn-secondary">Close</button>
+        </div>
+
+    </div>
+
+<div class='credit'>Created by : Fatima Mahmud</div>
+
+</body>
+
+</body>
+
+</html>
